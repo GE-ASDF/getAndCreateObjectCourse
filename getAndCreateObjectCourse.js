@@ -32,17 +32,20 @@
 function getCourseAndCreateObject(collapse, accordion){
 	this.collapse = document.querySelectorAll(collapse);
 	this.accordion = document.querySelectorAll(accordion);
-	const array1 = Array.from(this.accordion);
+	const accordionArray = Array.from(this.accordion);
 
-	this.setShowAttribute = function(classShow){
-		this.collapse.forEach(i=>{
+	this.setShowAttribute = function(iterable, classShow){
+		const iterableArray = document.querySelectorAll(iterable)
+		const hiddenIterable = Array.from(iterableArray)
+		hiddenIterable.forEach(i=>{
 			i.classList.add(classShow);
+			i.style.display = "block";
+			i.style.height = "100%";
 		})
 	}
-
 	this.createCourseObject = function(tituloClass, subtituloClass, aulas){
 
-		const lista = array1.map(i=>{
+		const lista = accordionArray.map(i=>{
 			const titulo = i.querySelector(tituloClass);
 			const subtitulo = i.querySelectorAll(subtituloClass);
 			const aula = i.querySelectorAll(aulas);
@@ -63,5 +66,5 @@ function getCourseAndCreateObject(collapse, accordion){
 }
 // Exemplo do que enviar para a função construtora
 const conteudo = new getCourseAndCreateObject("#accordion .collapse", "#accordion > div")
-conteudo.setShowAttribute("show")
+conteudo.setShowAttribute("#accordion .collapse", "show")
 conteudo.createCourseObject("div.cursor-pointer h5 span", ".collapse .py-2", ".collapse.show a")
