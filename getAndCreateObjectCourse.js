@@ -29,16 +29,18 @@
 // })()
 /* Esse é o final da primeira versão do código */
 
-function getCourseAndCreateObject(classShow, collapse, accordion){
+function getCourseAndCreateObject(collapse, accordion){
 	this.collapse = document.querySelectorAll(collapse);
 	this.accordion = document.querySelectorAll(accordion);
 	const array1 = Array.from(this.accordion);
 
-	this.createCourseObject = function(tituloClass, subtituloClass, aulas){
-
+	this.setShowAttribute = function(classShow){
 		this.collapse.forEach(i=>{
 			i.classList.add(classShow);
 		})
+	}
+
+	this.createCourseObject = function(tituloClass, subtituloClass, aulas){
 
 		const lista = array1.map(i=>{
 			const titulo = i.querySelector(tituloClass);
@@ -60,5 +62,6 @@ function getCourseAndCreateObject(classShow, collapse, accordion){
 
 }
 // Exemplo do que enviar para a função construtora
-const conteudo = new getCourseAndCreateObject("show", "#accordion .collapse", "#accordion > div")
+const conteudo = new getCourseAndCreateObject("#accordion .collapse", "#accordion > div")
+conteudo.setShowAttribute("show")
 conteudo.createCourseObject("div.cursor-pointer h5 span", ".collapse .py-2", ".collapse.show a")
