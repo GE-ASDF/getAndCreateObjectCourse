@@ -1,5 +1,6 @@
+// COPIE E COLE ESTE CÓDIGO NO CONSOLE
 function getCourseAndCreateObject(){
-	let accordionNode;
+	let accordionButtonsNode;
 	let buttonsArray;
 	let content;
 	let contentArray;
@@ -8,8 +9,8 @@ function getCourseAndCreateObject(){
 	let aulasNode;
 
 	this.openAllContent = function(accordionButtons){
-		accordionNode = document.querySelectorAll(accordionButtons)
-		buttonsArray = Array.from(accordionNode);
+		accordionButtonsNode = document.querySelectorAll(accordionButtons)
+		buttonsArray = Array.from(accordionButtonsNode);
 		buttonsArray.forEach(i=>{i.click()})
 	}
 	
@@ -32,8 +33,12 @@ function getCourseAndCreateObject(){
 		
 	}
 }
+// ANALISE O HTML DO SITE E FAÇA AS DEVIDAS ALTERAÇÕES PARA FUNCIONAR
 
+// INSTANCIE PRIMEIRO
 let content = new getCourseAndCreateObject()
+// EXECUTE PRIMEIRO ESTA FUNÇÃO CASO TENHA BOTÕES PARA ABRIR NO SITE
 content.openAllContent("#accordion .card-header")
+// EXECUTE ESTA FUNÇÃO APÓS ABRIR TODOS OS BOTÕES
 content.createCourseObject("#accordion .card", "h5", ".collapse > div div > .d-flex .pr-3 label a")
 
