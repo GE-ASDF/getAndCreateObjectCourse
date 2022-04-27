@@ -7,6 +7,7 @@ function getCourseAndCreateObject(){
 	let titulosCollection;
 	let titulos;
 	let aulasNode;
+	let aulas;
 
 	this.openAllContent = function(accordionButtons){
 		accordionButtonsNode = document.querySelectorAll(accordionButtons)
@@ -20,7 +21,7 @@ function getCourseAndCreateObject(){
 		titulosCollection = contentArray.map(tituloCollection=>{
 		titulos = tituloCollection.querySelector(tagTitle);
 		aulasNode = tituloCollection.querySelectorAll(accordionSecondary)
-		let aulas = Array.from(aulasNode);
+		aulas = Array.from(aulasNode);
 		return{titulos, aulas}
 	})
 	
