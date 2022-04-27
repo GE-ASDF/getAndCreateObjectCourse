@@ -42,3 +42,16 @@ content.openAllContent("#accordion .card-header")
 // EXECUTE ESTA FUNÇÃO APÓS ABRIR TODOS OS BOTÕES
 content.createCourseObject("#accordion .card", "h5", ".collapse > div div > .d-flex .pr-3 label a")
 
+
+
+
+
+
+
+
+
+/**
+ * ##############
+ * #### ASDF ####
+ * ##############
+ */
